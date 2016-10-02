@@ -7,7 +7,7 @@ r = praw.Reddit(user_agent = "Random Image Responder")
 
 r.login('us','pss')
 
-
+# Use words to look for
 words_to_match = ['Words to look for']
 cache = []
 cachesub = []
@@ -16,7 +16,8 @@ cachesub = []
 def run_bot():
 	print("Grabbing subreddit...")
 	subreddit = r.get_subreddit("753951")
-	submissions = list(r.get_subreddit("me_irl").get_hot(limit=10))
+	# Check submissiones in subreddit
+	submissions = list(r.get_subreddit("subreddit").get_hot(limit=10))
 	print("Grabbing comments...")
 	comments = subreddit.get_comments(limit=10)
 	for comment in comments:
@@ -28,11 +29,8 @@ def run_bot():
 			rnd = int(round(rnd))
 
 			print("Match found! Comment Id" + comment.id)
-			comment.reply(
-					'WEEEEOOOOWEEEEOOOOWEEEEOOOOWEEEEOOOO \n\n' +
-					 '------ \n\n The meme911 has arrived with a new meme ^^^meme ^^^^^meme' +
-					 '\n \n [Emergency Meme]('+ submissions[rnd].url +')'
-					 )
+			# Reply Text with Random Image
+			comment.reply('Text' +' [Image]('+ submissions[rnd].url +')')
 			print("Reply Success!")
 
 			cache.append(comment.id)
