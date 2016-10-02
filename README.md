@@ -1,2 +1,2 @@
-# meme911 bot
-This will reply to any comment made with 911meme and reply to it with a random picture from the hot page of /r/me_irl
+# Image Replier
+This is a simple script that will look for specified words and reply with a text and a random image from a subreddit
