@@ -3,12 +3,12 @@ import time
 import random
 from lxml import html
 
-r = praw.Reddit(user_agent = "Meme 911 /u/911meme")
+r = praw.Reddit(user_agent = "Random Image Responder")
 
 r.login('us','pss')
 
 
-words_to_match = ['meme 911']
+words_to_match = ['Words to look for']
 cache = []
 cachesub = []
 
